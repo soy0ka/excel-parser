@@ -1,0 +1,22 @@
+{
+  "name": "@dimigo/excel",
+  "version": "0.0.1",
+  "description": "node js excel parser for dimibob",
+  "main": "commonjs/excelParser.js",
+  "dependencies": {
+    "unzipper": "^0.8.11",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.27"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "mocha": "^1.17.1"
+  },
+  "keywords": [
+    "excel",
+    "xlsx"
+  ],
+  "author": "Dyij <qtcutie@kakao.com>",
+  "license": "MIT"
+}
