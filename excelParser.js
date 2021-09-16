@@ -1,5 +1,5 @@
 import fs from 'fs';
-import Stream from 'stream';
+import Stream, { Readable } from 'stream';
 import unzip from 'unzipper';
 import xpath from 'xpath';
 import XMLDOM from 'xmldom';
@@ -7,7 +7,7 @@ import XMLDOM from 'xmldom';
 const ns = { a: 'http://schemas.openxmlformats.org/spreadsheetml/2006/main' };
 const select = xpath.useNamespaces(ns);
 
-function extractFiles(path, sheet) {
+function extractFiles(pathOrBuffer, sheet) {
   const files = {
     strings: {},
     sheet: {},
@@ -15,7 +15,12 @@ function extractFiles(path, sheet) {
     [`xl/worksheets/sheet${sheet}.xml`]: 'sheet'
   };
 
-  const stream = path instanceof Stream ? path : fs.createReadStream(path);
+  const stream =
+    pathOrBuffer instanceof Stream
+      ? pathOrBuffer
+      : (pathOrBuffer instanceof Buffer
+        ? Readable.from(pathOrBuffer.toString('utf-8'))
+        : fs.createReadStream(pathOrBuffer))
 
   return new Promise((resolve, reject) => {
     const filePromises = [];
