@@ -1,6 +1,6 @@
 {
   "name": "@dimigo/excel",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "node js excel parser for dimibob",
   "main": "commonjs/excelParser.js",
   "dependencies": {
