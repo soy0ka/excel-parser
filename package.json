@@ -1,22 +1,36 @@
 {
   "name": "@dimigo/excel",
+<<<<<<< HEAD
   "version": "1.0.0",
+=======
+  "version": "0.1.0",
+>>>>>>> 4680d45fe6c0a45600522bedd2d6186949e4090a
   "description": "node js excel parser for dimibob",
-  "main": "commonjs/excelParser.js",
-  "dependencies": {
-    "unzipper": "^0.8.11",
-    "xmldom": "^0.1.27",
-    "xpath": "0.0.27"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "mocha": "^1.17.1"
-  },
+  "main": "dist/index.js",
   "keywords": [
     "excel",
     "xlsx"
   ],
-  "author": "Dyij <qtcutie@kakao.com>",
-  "license": "MIT"
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node ./test/example.js",
+    "postpublish": "npm run build"
+  },
+  "author": "Dyij <qtcutie@kakao.com>, Park Min Hyeok <pmhstudio.pmh@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/Muzihuzi/dimigo-excel.git",
+  "devDependencies": {
+    "@types/node": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  },
+  "dependencies": {
+    "jszip": "^3.7.1",
+    "xml-js": "^1.6.11"
+  }
 }
