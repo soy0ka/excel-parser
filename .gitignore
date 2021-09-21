@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 *.dccache
-=======
 node_modules/
 dist/
->>>>>>> 4680d45fe6c0a45600522bedd2d6186949e4090a
+package-lock.json
