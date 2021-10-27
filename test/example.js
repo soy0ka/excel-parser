@@ -2,7 +2,7 @@ const { readFileSync, writeFileSync } = require('fs')
 const { parseXlsx } = require('..')
 
 ; (async () => {
-  const xlsxFile = readFileSync('./test/dimibob.xlsx')
+  const xlsxFile = readFileSync('./test/test.xlsx')
   const worksheets = await parseXlsx(xlsxFile) // or parseXlsxFile('./test/dimibob.xlsx')
 
   console.log('%d sheet(s) found', worksheets.size)
