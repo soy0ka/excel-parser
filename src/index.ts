@@ -17,7 +17,7 @@ export async function parseXlsx (input: Buffer | ArrayBuffer | Blob | Uint8Array
 
   const worksheets = new Map<SheetName, Worksheet>()
   for (const [rawSheetKey, rawSheetValue] of extracted.sheets) {
-    if (!rawSheetValue.includes('<worksheet')) continue
+    if (!rawSheetValue.includes('<worksheet') && !rawSheetValue.includes('<x:worksheet')) continue
 
     const worksheet = new Worksheet(parseSheetXml(rawSheetValue))
     worksheets.set(rawSheetKey.replace(/xl\/worksheets\/|.xml$/g, ''),

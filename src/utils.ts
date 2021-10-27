@@ -4,7 +4,7 @@ import { Worksheet } from './classes/Worksheet'
 import { ShardedStringsData, SheetName, XLSXRawData } from './types'
 
 export function ifElemName (name: string) {
-  return (elem: ElementCompact) => elem.name === name
+  return (elem: ElementCompact) => elem.name === name || elem.name === `x:${name}`
 }
 
 export async function extract (stream: any): Promise<XLSXRawData> {
